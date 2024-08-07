@@ -3,22 +3,24 @@ The prefixed with “dummy” contain dummy data to run each of these files. The
 
 Please also note that the models here are sensitive to intial parameters: should a model fail to fit initial parameters may need to be adjusted.
 
-etb_structural_exploration.jl : This file explores the number of distribution compartments for ethambutol and also contains the code to create Pumas populations! These are used in other files, as such it is recommended to run this file first.
+S1_etb_structural_exploration.jl : This file explores the number of distribution compartments for ethambutol and also contains the code to create Pumas populations! These are used to fit the models in other files, as such it is recommended to run this file first.
 
-Etb_NCA_summary.jl: Perform Non-compartmental Analysis for observations on Day 0 and week 6.
+S2_Etb_NCA_summary.jl: Perform Non-compartmental Analysis for observations on Day 0 and week 6.
 
-Etb_WT_HIV_exploration.jl: Explore allometric weight and HIV covariates (stepwise forward step). REQUIRES POPULATIONS FROM etb_structural_exploration.
+S3_Etb_WT_HIV_exploration.jl: Explore allometric weight and HIV covariates (stepwise forward step). REQUIRES POPULATIONS FROM etb_structural_exploration.
 
-Etb_forward_backwards_selection.jl: Forward and backwards selection of covariates.  REQUIRES POPULATIONS FROM etb_structural_exploration.jl AND DATA FROM etb_WT_HIV_exploration.jl
+S4_etb_backwards_selection.jl: Backwards elimination of covariates. REQUIRES POPULATIONS FROM etb_structural_exploration.jl AND DATA FROM etb_WT_HIV_exploration.jl
 
-Etb_IIV_stepwsie.jl: Stepwise removal of Inter-individual variability. REQUIRES POPULATIONS FROM etb_structural_exploration.jl AND DATA FROM etb_WT_HIV_exploration.jl
+S5_etb_forward_selection.jl: Forward selection of covariates.REQUIRES POPULATIONS FROM etb_structural_exploration.jl AND DATA FROM etb_WT_HIV_exploration.jl
 
-Etb_final_model_and_diagnostics.jl: Final PK model and accompanying diagnostics.
+S6_etb_IIV_stepwsie.jl: Stepwise removal of Inter-individual variability. REQUIRES POPULATIONS FROM etb_structural_exploration.jl AND DATA FROM etb_WT_HIV_exploration.jl
 
-Etb_logistic_regression: Logistic regression of different factors for delayed bacteriological clearance.
+S7_etb_final_model_and_diagnostics.jl: Final PK model and accompanying diagnostics.
 
-Auc_calculations.jl: Simulate AUC using the model and test for any significant differences.
+S8_etb_logistic_regression: Logistic regression of different factors for delayed bacteriological clearance.
 
-Cmax_predictions.jl: Simulate Cmax using the model and test for any significant differences.
+S9_auc_calculations.jl: Simulate AUC using the model and test for any significant differences.
 
-Etb_kaplan_meier: Kaplan Meier curve, stratifying by CXL.
+S10_cmax_predictions.jl: Simulate Cmax using the model and test for any significant differences.
+
+S11_etb_kaplan_meier: Kaplan Meier curve, stratifying by CXL.
