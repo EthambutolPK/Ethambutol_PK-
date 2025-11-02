@@ -1,6 +1,8 @@
 Welcome to the Ethambutol Pharmacokinetics Repo! Please read me to understand how to interact with all of the files here.
 The prefixed with “dummy” contain dummy data to run each of these files. They are loaded in a few of the Julia and R files here, please make sure to adjust to your own file path before running!
 
+--------------------------Dummy data files removed whilst upgrading these for better performance-------------------------
+
 Please also note that the models here are sensitive to intial parameters: should a model fail to fit initial parameters may need to be adjusted.
 
 S1_etb_structural_exploration.jl : This file explores the number of distribution compartments for ethambutol and also contains the code to create Pumas populations! These are used to fit the models in other files, as such it is recommended to run this file first.
